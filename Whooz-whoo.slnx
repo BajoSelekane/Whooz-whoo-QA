@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Whooz-whoo.App/Whooz-whoo.App.csproj" />
+    <Project Path="Whooz-whoo.Application/Whooz-whoo.Application.csproj" />
+    <Project Path="Whooz-whoo.Domain/Whooz-whoo.Domain.csproj" />
+    <Project Path="Whooz-whoo.Infrastructure/Whooz-whoo.Infrastructure.csproj" />
+  </Folder>
+</Solution>
