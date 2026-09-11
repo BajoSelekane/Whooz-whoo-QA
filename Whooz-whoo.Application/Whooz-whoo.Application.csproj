@@ -9,9 +9,15 @@
 
   <ItemGroup>
     <Folder Include="Commands\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Common\" />
     <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Whooz-whoo.Domain\Whooz-whoo.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -41,8 +41,8 @@ namespace Whooz_whoo.Domain.Entities
             MaxCapacity = maxCapacity;
             IsLiveStreaming = isLiveStreaming;
             Status = EventStatus.Active;
-            Categories = new List<EventCategory>();
-            Tags = new List<EventTag>();
+            Categories = [];
+            Tags = [];
         }
     }
 }

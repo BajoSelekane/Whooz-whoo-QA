@@ -10,8 +10,12 @@
   <ItemGroup>
     <Folder Include="Cache\" />
     <Folder Include="External\" />
-    <Folder Include="Services\" />
-    <Folder Include="Persistence\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Whooz-whoo.Domain\Whooz-whoo.Domain.csproj" />
+  </ItemGroup>
+
+  
 
 </Project>

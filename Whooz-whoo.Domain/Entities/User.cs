@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Whooz_whoo.Domain.Common;
+using Whooz_whoo.Domain.Events;
 
 namespace Whooz_whoo.Domain.Entities
 {
@@ -34,10 +35,10 @@ namespace Whooz_whoo.Domain.Entities
             HomeLocation = homeLocation;
             IsVerified = false;
             IsOrganizer = false;
-            Interests = new List<UserInterest>();
-            Reviews = new List<Review>();
-            EventsAttending = new List<Event>();
-            Notifications = new List<Notification>();
+            Interests = [];
+            Reviews = [];
+            EventsAttending = [];
+            Notifications = [];
             CreatedAt = DateTime.UtcNow;
 
             AddDomainEvent(new UserCreatedEvent(this));

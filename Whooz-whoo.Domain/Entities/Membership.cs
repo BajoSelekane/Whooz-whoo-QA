@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Whooz_whoo.Domain.Common;
 using Whooz_whoo.Domain.Enums;
+using Whooz_whoo.Domain.Events;
 
 namespace Whooz_whoo.Domain.Entities
 {
@@ -46,25 +47,22 @@ namespace Whooz_whoo.Domain.Entities
             TransactionId = transactionId;
             Price = GetPriceForMembershipType(type);
             PaymentStatus = PaymentStatus.Completed;
-            Benefits = new List<MembershipBenefit>();
-            PaymentHistory = new List<PaymentHistory>();
+            Benefits = [];
+            PaymentHistory = [];
             CreatedAt = DateTime.UtcNow;
 
             AddDomainEvent(new MembershipCreatedEvent(this));
         }
 
-        private decimal GetPriceForMembershipType(MembershipType type)
+        private static decimal GetPriceForMembershipType(MembershipType type) => type switch
         {
-            return type switch
-            {
-                MembershipType.Free => 0,
-                MembershipType.Premium => 299.99m,
-                MembershipType.PremiumPlus => 499.99m,
-                MembershipType.Organizer => 999.99m,
-                MembershipType.Enterprise => 1999.99m,
-                _ => 0
-            };
-        }
+            MembershipType.Free => 0,
+            MembershipType.Premium => 299.99m,
+            MembershipType.PremiumPlus => 499.99m,
+            MembershipType.Organizer => 999.99m,
+            MembershipType.Enterprise => 1999.99m,
+            _ => 0
+        };
 
         public void Renew(DateTime newEndDate, string transactionId, decimal price)
         {
